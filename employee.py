@@ -1,28 +1,30 @@
 """Employee pay calculator."""
 """ENTER YOUR SOLUTION HERE!"""
 
+
 class Employee:
     def __init__(self, name, salary=None, hourly_wage=None, hours=None, bonus_commission=None, contract_commission=None, contracts_landed=None):
         self.name = name
         self.salary = salary
         self.hourly_wage = hourly_wage
         self.hours = hours
-        self.bonus_comission = bonus_comission
-        self.contract_comission = contract_comission
+        self.bonus_commission = bonus_commission
+        self.contract_commission = contract_commission
         self.contracts_landed = contracts_landed
 
     def get_pay(self):
-
         if self.salary:
             total_pay = self.salary
         elif self.hourly_wage and self.hours:
+            total_pay = self.hourly_wage * self.hours
+        else:
             total_pay = 0
 
-        if self.bonus_comission:
-            total_pay += self.bonus_comission
+        if self.bonus_commission:
+            total_pay += self.bonus_commission
 
-        if self.contract_comission and self.contracts_landed:
-            total_pay += self.contract_comission * self.contracts_landed
+        if self.contract_commission and self.contracts_landed:
+            total_pay += self.contract_commission * self.contracts_landed
 
         return total_pay
 
